@@ -33,5 +33,15 @@ def bookappt():
   return render_template('bookappt.html')
 
 
+@app.route("/kinds")
+def kinds():
+  return render_template('kinds.html')
+
+
+@app.route("/results")
+def results():
+  return render_template('results.html')
+
+
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)

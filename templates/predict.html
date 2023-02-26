@@ -9,14 +9,14 @@
     <link rel="stylesheet" type="text/css" href="../static/mystyle.css">
 </head>
 <body>
-    <!-- <script src="formvalues.js"></script> -->
+
     {% include 'nav.html' %}
     <br>
     <h1 style="text-align:center">Prognostic Lung Cancer Prediction</h1>
     
     <br>
-    <br> <h4>Please enter your details below to generate result: </h4><br>
-    <form action="results.html" >
+    <br> <h5 style="margin-left:70px;">Please enter your details below to generate result: </h5><br>
+    <form action="/results" >
         Full name:
         <input type="text" name="name" id="name">
         <br>
@@ -109,12 +109,13 @@
         </datalist>
 
         <br> Enter BMI: <input type="text" name="BMI" id="bmi"><br><br>
-        <a href="https://www.calculator.net/bmi-calculator.html?ctype=metric&cage=22&csex=f&cheightfeet=5&cheightinch=10&cpound=160&cheightmeter=150&ckg=44&printit=0&x=32&y=11">You can calculate your BMI here!</a>
+        <a href="https://www.calculator.net/bmi-calculator.html?ctype=metric&cage=22&csex=f&cheightfeet=5&cheightinch=10&cpound=160&cheightmeter=150&ckg=44&printit=0&x=32&Y=11" target="_blank">You can calculate your BMI here!</a>
         
         
-        <br><br><input type="submit" value="Submit" onClick="testResults()">
-        
+        <br><br>
+      <input class="btn btn-info" type="submit" value="Submit" onClick="testResults()">
     </form>
+  <br><br>
     <script src="formvalues.js"></script>
   {% include 'footer.html' %}
 </body>
