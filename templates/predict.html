@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/mystyle.css">
+</head>
+<body>
+    <!-- <script src="formvalues.js"></script> -->
+    {% include 'nav.html' %}
+    <br>
+    <h1 style="text-align:center">Prognostic Lung Cancer Prediction</h1>
+    
+    <br>
+    <br> <h4>Please enter your details below to generate result: </h4><br>
+    <form action="results.html" >
+        Full name:
+        <input type="text" name="name" id="name">
+        <br>
+        
+        <br><br>
+        <input type="radio" name="smoke" id="smoke">Smoker
+        <input type="radio" name="nonsmoke" id="nonsmoke">Non-Smoker
+        <br><br>
+
+        On a scale of 1-10:<br>
+
+        <br> How bad is the air pollution in your area: <br>
+        <input type="range" list="tickmarks" min="0" max="10" value="0" class="slider" id="pollution" step="1">
+        <datalist id="tickmarks">
+        <option value="0" label="0"></option>
+        <option value="1"></option>
+        <option value="2"></option>
+        <option value="3"></option>
+        <option value="4"></option>
+        <option value="5" label="5"></option>
+        <option value="6"></option>
+        <option value="7"></option>
+        <option value="8"></option>
+        <option value="9"></option>
+        <option value="10" label="10"></option>
+        </datalist>
+
+        <br> How much alcohol do you consume: <br>
+        <input type="range" list="tickmarks" min="0" max="10" value="0" class="slider" id="alcohol" step="1">
+        <datalist id="tickmarks">
+            <option value="0" label="0"></option>
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5" label="5"></option>
+            <option value="6"></option>
+            <option value="7"></option>
+            <option value="8"></option>
+            <option value="9"></option>
+            <option value="10" label="10"></option>
+        </datalist>
+
+        <br> Level of dust allergy: <br>
+        <input type="range" list="tickmarks" min="0" max="10" value="0" class="slider" id="dust" step="1">
+        <datalist id="tickmarks">
+            <option value="0" label="0"></option>
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5" label="5"></option>
+            <option value="6"></option>
+            <option value="7"></option>
+            <option value="8"></option>
+            <option value="9"></option>
+            <option value="10" label="10"></option>
+        </datalist>
+
+        <br> Would you say you have a balanced diet: <br>
+        <input type="range" list="tickmarks" min="0" max="10" value="0" class="slider" id="diet" step="1">
+        <datalist id="tickmarks">
+            <option value="0" label="0"></option>
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5" label="5"></option>
+            <option value="6"></option>
+            <option value="7"></option>
+            <option value="8"></option>
+            <option value="9"></option>
+            <option value="10" label="10"></option>
+        </datalist>
+
+        <br>Severity of chest pain: <br>
+        <input type="range" list="tickmarks" min="0" max="10" value="0" class="slider" id="chestpain" step="1">
+        <datalist id="tickmarks">
+            <option value="0" label="0"></option>
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5" label="5"></option>
+            <option value="6"></option>
+            <option value="7"></option>
+            <option value="8"></option>
+            <option value="9"></option>
+            <option value="10" label="10"></option>
+        </datalist>
+
+        <br> Enter BMI: <input type="text" name="BMI" id="bmi"><br><br>
+        <a href="https://www.calculator.net/bmi-calculator.html?ctype=metric&cage=22&csex=f&cheightfeet=5&cheightinch=10&cpound=160&cheightmeter=150&ckg=44&printit=0&x=32&y=11">You can calculate your BMI here!</a>
+        
+        
+        <br><br><input type="submit" value="Submit" onClick="testResults()">
+        
+    </form>
+    <script src="formvalues.js"></script>
+  {% include 'footer.html' %}
+</body>
+</html>

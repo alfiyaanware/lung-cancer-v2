@@ -8,14 +8,29 @@ def renders():
   return render_template('home.html')
 
 
+@app.route("/home")
+def home():
+  return render_template('home.html')
+
+
 @app.route('/about')
 def about():
   return render_template("about.html")
 
 
-@app.route("/home")
-def home():
-  return render_template('home.html')
+@app.route("/treat")
+def treat():
+  return render_template('treat.html')
+
+
+@app.route("/predict")
+def predict():
+  return render_template('predict.html')
+
+
+@app.route("/bookappt")
+def bookappt():
+  return render_template('bookappt.html')
 
 
 if __name__ == "__main__":
