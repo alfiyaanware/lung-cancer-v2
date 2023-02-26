@@ -3,6 +3,7 @@ body{
   }
 p, h1, h2, h4,h3{         
     margin-right: 150px;
+    margin-left:60px;
 }
 ul, ol {
     margin-bottom: 100px;
