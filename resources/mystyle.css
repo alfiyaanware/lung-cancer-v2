@@ -1,0 +1,21 @@
+body{
+    background-color: #b9e9eb;
+  }
+p, h1, h2, h4,h3{         
+    margin-right: 150px;
+}
+ul, ol {
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+  }
+form{
+    margin-right: 150px;
+    margin-left: 80px;
+}
+datalist {
+  display: flex;
+  justify-content: space-between;
+  color: rgb(104, 46, 46);
+  width: 11.7%;
+}
