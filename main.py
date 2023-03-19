@@ -1,26 +1,25 @@
 from flask import Flask, render_template
+from database import engine
+from sqlalchemy import text
 
 app = Flask(__name__)
 
-JOBS = [
-{
-'id':1,
-'title': 'Data Analyst',
-'location': 'Bengaluru, India',
-'salary': 'Rs. 10,00,000'
-},
-{
-'id':2,
-'title': 'Data Scientist',
-'location': 'Delhi, India',
-'salary': 'Rs. 15,00,000'
-}
-]
+
+def load_db():
+
+  with engine.connect() as conn:
+    result = conn.execute(text("select * from hospitals"))
+
+    result_dicts = []
+    for row in result.all():
+      result_dicts.append(row._mapping)
+
+  return result_dicts
 
 
 @app.route("/")
 def renders():
-  return render_template('home.html', jobs=JOBS)
+  return render_template('home.html')
 
 
 @app.route("/home")
@@ -45,7 +44,8 @@ def predict():
 
 @app.route("/bookappt")
 def bookappt():
-  return render_template('bookappt.html')
+  jobs = load_db()
+  return render_template('bookappt.html', jobs=jobs)
 
 
 @app.route("/kinds")
