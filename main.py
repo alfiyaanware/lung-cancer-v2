@@ -1,20 +1,7 @@
 from flask import Flask, render_template
-from database import engine
-from sqlalchemy import text
+from database import load_db
 
 app = Flask(__name__)
-
-
-def load_db():
-
-  with engine.connect() as conn:
-    result = conn.execute(text("select * from hospitals"))
-
-    result_dicts = []
-    for row in result.all():
-      result_dicts.append(row._mapping)
-
-  return result_dicts
 
 
 @app.route("/")
