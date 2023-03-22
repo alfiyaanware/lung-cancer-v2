@@ -1,16 +1,11 @@
 from flask import Flask, render_template
-from database import load_db
+from database import load_db, load_hospital_from_db
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def renders():
-  return render_template('home.html')
-
-
-@app.route("/home")
-def home():
   return render_template('home.html')
 
 
@@ -31,8 +26,16 @@ def predict():
 
 @app.route("/bookappt")
 def bookappt():
-  jobs = load_db()
-  return render_template('bookappt.html', jobs=jobs)
+  hospitals = load_db()
+  return render_template('bookappt.html', hospitals=hospitals)
+
+
+@app.route("/bookappt/<id>")
+def show_hospital(id):
+  hospital = load_hospital_from_db(id)
+  if not hospital:
+    return "Not Found", 404
+  return render_template('hospital.html', hospital=hospital)
 
 
 @app.route("/kinds")

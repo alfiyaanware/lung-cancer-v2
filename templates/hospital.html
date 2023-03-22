@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{hospital.title}} - Lung Cancer Treatment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/mystyle.css">
+  <script src="../static/formvalues.js"></script>
+  
+</head>
+<body>
+  
+    {% include 'nav.html' %}
+    <br>
+    
+  <br><br>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-7">
+        <h1>{{hospital.title}}</h1>
+        <br>
+        <p>Location: {{hospital.location}}</p>
+        <p>Contact No: {{hospital.phone}}</p>
+        <p>Timings: {{hospital.timing}}</p>
+      </div>
+      <div class="col-sm-3">
+        <img src="/static/images/hospital.jpg" alt="hospital" style="width:500px">
+      </div>
+    </div>
+  </div>
+    
+  <br><br>
+    
+  {% include 'footer.html' %}
+</body>
+</html>

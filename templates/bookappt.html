@@ -44,14 +44,15 @@
   <H3 style="margin-left:40px; margin-top:60px;">Hospitals Available</h3>
   <br>
   <div style="margin-left:20px" class="row row-cols-4 g-0">
-  {% for job in jobs %}
+  {% for hospital in hospitals %}
   <div class="col">
     <div class="card bg-light" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">{{job.title}}</h5>
-      <p class="card-text">Location: {{job.location}}</p>
-      <p class="card-text">Contact No: {{job.phone}}</p>
-      <p class="card-text">Timings: {{job.timing}}</p>
+      <h5 class="card-title">{{hospital.title}}</h5>
+      <p class="card-text">Location: {{hospital.location}}</p>
+      <p class="card-text">Contact No: {{hospital.phone}}</p>
+      <p class="card-text">Timings: {{hospital.timing}}</p>
+      <a href="./bookappt/{{hospital['id']}}" class="btn btn-primary">More</a>
     </div>
   </div>
   </div>
