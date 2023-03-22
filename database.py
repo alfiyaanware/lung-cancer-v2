@@ -22,9 +22,23 @@ def load_db():
 
 def load_hospital_from_db(id):
   with engine.connect() as conn:
-    result = conn.execute(text(f"select * from hospitals where id= :val"), {"val": id})
+    result = conn.execute(text(f"select * from hospitals where id= :val"),
+                          {"val": id})
     rows = result.mappings().all()
     if len(rows) == 0:
       return None
     else:
       return dict(rows[0])
+
+
+# def add_contact_info(data):
+#   with engine.connect() as conn:
+#     query = text(
+#       "insert into data(fname, lname, email, pnumber, availability) VALUES [:fname, :lname, :email, :pnumber, :availability])"
+#     )
+#   conn.execute(query,{
+#                'fname':data['fname'],
+#                'lname':data['lname'],
+#                'email':data['email'],
+#                'pnumber':data['pnumber'],
+#                'availability':data['availability']})

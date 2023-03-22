@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
 from database import load_db, load_hospital_from_db
 
 app = Flask(__name__)
@@ -46,6 +46,13 @@ def kinds():
 @app.route("/results")
 def results():
   return render_template('results.html')
+
+
+@app.route("/contactform", methods=['post'])
+def contact():
+  data = request.form
+  # add_contact_info(data)
+  return render_template('contactform.html', data=data)
 
 
 if __name__ == "__main__":
