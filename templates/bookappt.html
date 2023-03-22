@@ -18,17 +18,17 @@
     <img src="static/images/staff.jpg" width="450" height="300"  style="float:right; margin-right:100px; margin-top:10px;" >
     <h5 style="margin-left:70px;">Book an appointment with us!</h5><br>
     <form action="/contactform" method="post">
-        First name:
-        <input type="text" name="fname" size="22">
+        First name *:
+        <input type="text" required name="fname" size="22">
         <br><br>
-        Last name:
-        <input type="text" name="lname" size="22">
+        Last name *:
+        <input type="text" required name="lname" size="22">
         <br><br>
-        Mobile no.:
-        <input type="text" name="pnumber" size="21">
+        Mobile no.*:
+        <input type="text" required name="pnumber" size="22">
         <br><br>
-        Email ID:
-        <input type="text" name="email" size="23">
+        Email ID *:
+        <input type="email" required name="email" size="24">
         <br><br>
         Date of availability:
         <input type="date" name="availability">
