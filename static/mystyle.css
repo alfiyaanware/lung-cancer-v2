@@ -17,10 +17,6 @@ datalist {
   width: 11.7%;
 }
 
-#page-container {
-  position: relative;
-  min-height: 100vh;
-}
 
 #footer {
    position: fixed;
