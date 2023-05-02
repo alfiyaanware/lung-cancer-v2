@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from database import load_db, load_hospital_from_db
+from database import load_db, load_hospital_from_db, add_contact_info
 
 app = Flask(__name__)
 
@@ -51,7 +51,7 @@ def results():
 @app.route("/contactform", methods=['post'])
 def contact():
   data = request.form
-  # add_contact_info(data)
+  add_contact_info(data)
   return render_template('contactform.html', data=data)
 
 

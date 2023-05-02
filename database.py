@@ -31,14 +31,29 @@ def load_hospital_from_db(id):
       return dict(rows[0])
 
 
-# def add_contact_info(data):
+def add_contact_info(data):
+  with engine.connect() as conn:
+    query = text(
+      "INSERT INTO data(id, fname, lname, email, pnumber, availability) VALUES (NULL, :fname, :lname, :email, :pnumber, :availability)"
+    )
+    conn.execute(query,
+                 fname=data['fname'],
+                 lname=data['lname'],
+                 email=data['email'],
+                 pnumber=data['pnumber'],
+                 availability=data['availability'])
+
+
+# def add_contact_info(id, data):
 #   with engine.connect() as conn:
 #     query = text(
-#       "insert into data(fname, lname, email, pnumber, availability) VALUES [:fname, :lname, :email, :pnumber, :availability])"
+#       "INSERT INTO data(id, fname, lname, email, pnumber, availability) VALUES (DEFAULT, :fname, :lname, :email, :pnumber, :availability)"
 #     )
-#   conn.execute(query,{
-#                'fname':data['fname'],
-#                'lname':data['lname'],
-#                'email':data['email'],
-#                'pnumber':data['pnumber'],
-#                'availability':data['availability']})
+#     conn.execute(
+#       query,
+#       fname=data['fname'],
+#       lname=data['lname'],
+#       email=data['email'],
+#       pnumber=data['pnumber'],
+#       availability=data['availability']
+#     )
